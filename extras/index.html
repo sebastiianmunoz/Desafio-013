@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    
+    #outer-div{
+        border:solid 1px black;
+        padding: 20px;
+        width: 400px;
+        height:300px;
+        margin:auto;
+    }
+    #inner-div{
+        border:solid 1px red;
+        padding: 20px;
+        width: 50%;
+        height:50%;
+        margin:auto;
+        text-align: center;
+    }
+    
+    
+    </style>
+  </head>
+  <body>
+
+   <!-- 3 EVENTOS DINAMICOS -->
+<!-- <BUTTON id="button" value="+">+
+</BUTTON>
+<p class="par"> hola </p> -->
+
+<!-- obtrusivo -->
+<!-- <p class="par" onclick="alert('hola')"> hola </p> -->
+
+
+   <!-- 5 bubbling -->
+<div id="outer-div">
+<div id="inner-div">
+<BUTTON id="button" >Click</BUTTON>
+</div>
+</div>
+
+    <!-- <img src="https://imagizer.imageshack.us/v2/350x496q90/822/z7ds.jpg" alt=""> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script >
+    //1 VER EVENTOS (OBJETO EVENTOS)
+    // $(document).click(function(event){
+    //     console.log(event);
+    // })
+
+    //2 PREVENT DEFAULT 
+    // $(document).ON("contextmenu",function(e){
+    //    e.preventDefault();
+    // })
+    // $("img").on("contextmenu",function(e){
+    //    e.preventDefault();
+    // })
+
+    //3 EVENTOS DINAMICOS
+    // $("#button").click(function(){
+    // // obtrusivo 
+    // //$("body").append('<p class="par" onclick="alert(\'hola\')"> hola </p>')
+
+    //      $("body").append('<p class="par"> hola </p>')
+    // });
+    
+    // $('.par').on('click', function(){
+    // alert("hola");
+    // console.log("holas")
+    // })
+
+    //4 DELEGANDO
+    // $("#button").click(function(){
+    //      $("body").append('<p class="par"> hola </p>')
+    // });
+    
+    // $('body').on('click','.par', function(){
+    // alert("hola");
+    // console.log("holas")
+    // })
+  //5 PROPAGACION
+  $("#outer-div").click(function(){
+
+if (this == event.target){
+alert("outer");
+}
+
+  })
+  $("#inner-div").click(function(){
+    if (this == event.target){
+        alert("inner");
+}
+
+  })
+  $("#button").click(function(event){
+    //  event.stopPropagation();
+    if (this == event.target){
+   alert("button");
+   }
+
+  })
+    </script>
+  </body>
+</html>

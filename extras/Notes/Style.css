@@ -1,0 +1,23 @@
+.note{
+    background-color:YELLOW;
+    border: solid 1px #ccc;
+    padding: 25px;
+    width: 250px;
+    height: 250px;
+    overflow: auto;
+    float: left;
+    margin-left: 20px;
+}
+
+.pin{
+
+    background-color:red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+
+.strike{
+text-decoration: line-through;
+}
